@@ -10,3 +10,7 @@ document.querySelector(".score").textContent = 10;
 console.log(document.querySelector(".guess").value);
 document.querySelector(".guess").value = 25;
 */
+
+document.querySelector(".check").addEventListener("click", function () {
+  console.log(document.querySelector(".guess").value);
+});
