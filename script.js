@@ -22,7 +22,9 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "No number!";
   } else if (guessNumber === guess) {
     document.querySelector(".message").textContent = "Correct Number!";
-  } else if (guessNumber !== guess) {
-    document.querySelector(".message").textContent = "Wrong number, try again!";
+  } else if (guessNumber < guess) {
+    document.querySelector(".message").textContent = "Wrong number, Go lower!";
+  } else if (guessNumber > guess) {
+    document.querySelector(".message").textContent = "Wrong number, Go higher!";
   }
 });
