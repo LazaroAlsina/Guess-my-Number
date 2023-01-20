@@ -24,12 +24,24 @@ document.querySelector(".check").addEventListener("click", function () {
   } else if (guessNumber === guess) {
     document.querySelector(".message").textContent = "Correct Number!";
   } else if (guessNumber < guess) {
-    document.querySelector(".message").textContent = "Wrong number, Go lower!";
-    score -= 1;
-    document.querySelector(".score").textContent = score;
+    if (score > 1) {
+      document.querySelector(".message").textContent =
+        "Wrong number, Go lower!";
+      score -= 1;
+      document.querySelector(".score").textContent = score;
+    } else if (score === 1) {
+      document.querySelector(".score").textContent = 0;
+      document.querySelector(".message").textContent = "You lost!";
+    }
   } else if (guessNumber > guess) {
-    document.querySelector(".message").textContent = "Wrong number, Go higher!";
-    score -= 1;
-    document.querySelector(".score").textContent = score;
+    if (score > 1) {
+      document.querySelector(".message").textContent =
+        "Wrong number, Go higher!";
+      score -= 1;
+      document.querySelector(".score").textContent = score;
+    } else if (score === 1) {
+      document.querySelector(".score").textContent = 0;
+      document.querySelector(".message").textContent = "You lost!";
+    }
   }
 });
