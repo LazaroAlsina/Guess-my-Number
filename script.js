@@ -11,7 +11,6 @@ document.querySelector(".guess").value = 25;
 */
 
 let guessNumber = Math.floor(Math.random() * 20 + 1);
-document.querySelector(".number").textContent = guessNumber;
 
 let score = 20;
 
@@ -22,6 +21,7 @@ document.querySelector(".check").addEventListener("click", function () {
   if (!guess) {
     document.querySelector(".message").textContent = "No number!";
   } else if (guessNumber === guess) {
+    document.querySelector(".number").textContent = guessNumber;
     document.querySelector(".message").textContent = "Correct Number!";
     document.querySelector("body").style.backgroundColor = "green";
     document.querySelector(".number").style.width = "30rem";
@@ -57,4 +57,5 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".number").textContent = guessNumber;
   document.querySelector(".number").style.width = "15rem";
   document.querySelector(".guess").value = "";
+  document.querySelector(".number").textContent = "?";
 });
