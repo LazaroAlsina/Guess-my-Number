@@ -57,5 +57,4 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".number").textContent = guessNumber;
   document.querySelector(".number").style.width = "15rem";
   document.querySelector(".guess").value = "";
-  console.log(document.querySelector(".guess").value);
 });
