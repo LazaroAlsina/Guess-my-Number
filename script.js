@@ -23,6 +23,8 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "No number!";
   } else if (guessNumber === guess) {
     document.querySelector(".message").textContent = "Correct Number!";
+    document.querySelector("body").style.backgroundColor = "green";
+    document.querySelector(".number").style.width = "30rem";
   } else if (guessNumber < guess) {
     if (score > 1) {
       document.querySelector(".message").textContent =
