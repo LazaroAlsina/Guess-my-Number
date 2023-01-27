@@ -11,8 +11,8 @@ document.querySelector(".guess").value = 25;
 */
 
 let guessNumber = Math.floor(Math.random() * 20 + 1);
-
 let score = 20;
+let highscore = 0;
 
 document.querySelector(".check").addEventListener("click", function () {
   console.log(document.querySelector(".guess").value);
@@ -25,6 +25,11 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "Correct Number!";
     document.querySelector("body").style.backgroundColor = "green";
     document.querySelector(".number").style.width = "30rem";
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
   } else if (guessNumber < guess) {
     if (score > 1) {
       document.querySelector(".message").textContent =
