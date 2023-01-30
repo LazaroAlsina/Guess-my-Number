@@ -24,7 +24,6 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "Correct Number!";
     document.querySelector("body").style.backgroundColor = "green";
     document.querySelector(".number").style.width = "30rem";
-
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
