@@ -15,7 +15,6 @@ let score = 20;
 let highscore = 0;
 
 document.querySelector(".check").addEventListener("click", function () {
-  console.log(document.querySelector(".guess").value);
   const guess = Number(document.querySelector(".guess").value);
 
   if (!guess) {
@@ -25,28 +24,20 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "Correct Number!";
     document.querySelector("body").style.backgroundColor = "green";
     document.querySelector(".number").style.width = "30rem";
-
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
     }
-  } else if (guessNumber < guess) {
+  } else if (guess !== guessNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent =
-        "Wrong number, Go lower!";
+        guess > guessNumber
+          ? "Wrong number, Go lower!"
+          : "Wrong number, Go higher!";
       score -= 1;
       document.querySelector(".score").textContent = score;
-    } else if (score === 1) {
-      document.querySelector(".score").textContent = 0;
-      document.querySelector(".message").textContent = "You lost!";
     }
-  } else if (guessNumber > guess) {
-    if (score > 1) {
-      document.querySelector(".message").textContent =
-        "Wrong number, Go higher!";
-      score -= 1;
-      document.querySelector(".score").textContent = score;
-    } else if (score === 1) {
+    if (score === 1) {
       document.querySelector(".score").textContent = 0;
       document.querySelector(".message").textContent = "You lost!";
     }
